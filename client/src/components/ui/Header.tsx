@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <>
       <nav className="w-full fixed flex z-[99] items-center justify-between px-0 pr-10 md:px-5 md:py-2 text-white">
-        <div>
+        <div className="md:ml-10">
           <Link href={"/"}>
           <Image
             className="w-[150px] mt-3 "
