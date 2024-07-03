@@ -11,11 +11,28 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
-      animation: {
-        aurora: "aurora 60s linear infinite",
-        shimmer: "shimmer 2s linear infinite",
+      backgroundImage: {
+        'custom-gradient-light': 'linear-gradient(270deg, #fff 30%, hsla(0, 0%, 100%, 0))',
+        'custom-gradient-dark': 'linear-gradient(270deg, #333 30%, hsla(0, 0%, 20%, 0))',
+        'custom-gradient-lightl': 'linear-gradient(90deg, #fff 30%, hsla(0, 0%, 100%, 0))',
+        'custom-gradient-darkl': 'linear-gradient(90deg, #333 30%, hsla(0, 0%, 20%, 0))',
       },
       keyframes: {
+        upanddown: {
+          "0%": { top: "20%" },
+          "50%": { top: "25%" },
+          "100%": { top: "20%" },
+        },
+        middle: {
+          "0%": { top: "14%" },
+          "50%": { top: "17%" },
+          "100%": { top: "14%" },
+        },
+        down: {
+          "0%": { top: "70%" },
+          "50%": { top: "73%" },
+          "100%": { top: "70%" },
+        },
         shimmer: {
           from: {
             backgroundPosition: "0 0",
@@ -32,6 +49,13 @@ module.exports = {
             backgroundPosition: "350% 50%, 350% 50%",
           },
         },
+      },
+      animation: {
+        aurora: "aurora 60s linear infinite",
+        shimmer: "shimmer 2s linear infinite",
+        upanddown: 'upanddown 7s 1s infinite',
+        middle: 'middle 7s  infinite',
+        down: 'down 7s  infinite',
       },
     },
   },

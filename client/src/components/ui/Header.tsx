@@ -23,14 +23,14 @@ const Header = () => {
       <nav className="w-full fixed flex z-[99] items-center justify-between px-0 pr-10 md:px-5 md:py-2 text-white">
         <div className="md:ml-10">
           <Link href={"/"}>
-          <Image
-            className="w-[150px] mt-3 "
-            src={logo}
-            height={200}
-            width={200}
-            alt="No Image"
+            <Image
+              className="w-[150px] mt-3 "
+              src={logo}
+              height={200}
+              width={200}
+              alt="No Image"
             />
-            </Link>
+          </Link>
         </div>
         <div className="md:flex gap-10 items-center justify-center md:text-2xl mr-10 font-medium font-sans  hidden  text-black dark:text-white ">
           <Link href={"/service"}>
@@ -50,8 +50,10 @@ const Header = () => {
           </Link>
           <div className="relative">
             {buttons.map((button, idx) => (
-              <Link href={"/card"}>
-                <ButtonsCard key={idx}>{button.component}</ButtonsCard>
+              <Link key={idx} href={"/card"}>
+                <ButtonsCard >
+                  {button.name === "Border Magic" && button.component}
+                </ButtonsCard>
               </Link>
             ))}
           </div>
