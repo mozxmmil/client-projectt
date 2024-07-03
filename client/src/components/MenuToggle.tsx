@@ -18,14 +18,14 @@ const MenuToggle: React.FC<Input> = ({ onclick }) => {
   };
 
   return (
-    <div className="relative w-full h-screen text-2xl font-bold text-black dark:text-white ">
-      <div className="absolute  right-0 z-[9999]" onClick={handleToggle}>
+    <div className="relative text-2xl font-bold text-black dark:text-white ">
+      <div className="absolute right-0 z-[9999]" onClick={handleToggle}>
         {toggle ? (
-          <div className="">
+          <div className="text-black dark:text-white">
             <CiMenuBurger />
           </div>
         ) : (
-          <div className="">
+          <div className="text-black dark:text-white">
             <X />
           </div>
         )}
