@@ -7,7 +7,6 @@ import { ButtonsCard } from "./tailwindcss-buttons";
 import { buttons } from "@/lib/buttonAnimation";
 import { ModeToggle } from "./darkMode";
 import MenuToggle from "@/components/MenuToggle";
-import Slider from "../Slider";
 import { useNavContex } from "@/context/NavButton";
 import Link from "next/link";
 

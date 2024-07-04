@@ -20,6 +20,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { tree } from "next/dist/build/templates/app-page";
+import ContactCard from "@/components/ContactCard";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 function AuroraBackgroundDemo() {
@@ -42,7 +43,6 @@ function AuroraBackgroundDemo() {
           start: "30% 70%",
           end: "70% 80%",
           scrub: true,
-          
         },
       });
       tl.to(h1.current, {
@@ -258,11 +258,11 @@ function AuroraBackgroundDemo() {
         </div>
         <div
           ref={animation}
-          className=" second w-full h-screen bg-white dark:bg-zinc-800 "
+          className=" second w-full md:h-[90vh] bg-white dark:bg-zinc-800 "
         >
-          <div className="w-full bg-white dark:bg-black h-full dark:text-white text-black overflow-hidden ">
+          <div className="w-full bg-white dark:bg-zinc-800 h-full dark:text-white text-black overflow-hidden ">
             <div className="w-full h-full font-[Anton Sc] relative font-bold    flex  flex-col md:flex-col    gap-5   ">
-              <div className=" h-full w-full flex  flex-col md:flex-col   overflow-hidden   gap-5  text-black dark:text-white   top-0  absolute left-0 ">
+              <div className=" h-full w-full flex  flex-col md:flex-col   overflow-hidden   gap-5  text-black dark:text-white pb-5 md:pb-0  top-0  absolute left-0 ">
                 <h1
                   ref={h1}
                   className="w-[0%]  md:text-7xl text-3xl text-nowrap overflow-hidden opacity-100 "
@@ -277,31 +277,31 @@ function AuroraBackgroundDemo() {
                 </h1>
                 <h1
                   ref={h3}
-                  className="w-[0%]  md:text-7xl text-4xl text-nowrap overflow-hidden opacity-100"
+                  className="w-[0%]  md:text-7xl text-3xl text-nowrap overflow-hidden opacity-100"
                 >
                   3D Modeling
                 </h1>
                 <h1
                   ref={h4}
-                  className="w-[0%]  md:text-7xl text-4xl text-nowrap overflow-hidden opacity-100"
+                  className="w-[0%]  md:text-7xl text-3xl text-nowrap overflow-hidden opacity-100"
                 >
                   Video Editing{" "}
                 </h1>
                 <h1
                   ref={h5}
-                  className="w-[0%]  md:text-7xl text-4xl text-nowrap overflow-hidden opacity-100"
+                  className="w-[0%]  md:text-7xl text-3xl text-nowrap overflow-hidden opacity-100"
                 >
                   Logo Creation
                 </h1>
                 <h1
                   ref={h6}
-                  className="w-[0%] md:text-7xl text-4xl  text-nowrap overflow-hidden opacity-100"
+                  className="w-[0%] md:text-7xl text-3xl  text-nowrap overflow-hidden opacity-100"
                 >
                   Graphic Design
                 </h1>
                 <h1
                   ref={h7}
-                  className="w-[0%]  md:text-7xl text-4xl text-nowrap overflow-hidden opacity-100"
+                  className="w-[0%]  md:text-7xl text-3xl text-nowrap overflow-hidden opacity-100"
                 >
                   Web Development
                 </h1>
@@ -328,11 +328,19 @@ function AuroraBackgroundDemo() {
               <h1 className="opacity-10 md:text-7xl text-3xl">
                 Social Media Manage{" "}
               </h1>
+              <hr className="mt-4" />
             </div>
           </div>
-          <div className=""></div>
+          
         </div>
-        <div className="h-screen w-full bg-red-50"></div>
+        <div className="h-screen w-full dark:bg-zinc-800 bg-white flex justify-center pt-5 md:pt-10">
+          <div className="md:w-1/2 w-full h-fit   md:px-10 px-5 md:py-10 py-1 dark:text-white text-black">
+          <h1 className="text-4xl text-center font-bold font-mono ">
+          Have Questions? Contact Us
+          </h1>
+            <ContactCard />
+          </div>
+        </div>
       </div>
     </>
   );
