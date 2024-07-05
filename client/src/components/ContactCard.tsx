@@ -18,6 +18,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { Loader, Loader2, LoaderCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -31,10 +33,11 @@ const formSchema = z.object({
   message: z
     .string()
     .min(2, { message: "Type Message" })
-    .max(32, { message: "Too Long" }),
+    .max(100, { message: "Too Long" }),
 });
 
 function ContactCard() {
+  const [isloading, setisloading] = useState(false)
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,17 +48,25 @@ function ContactCard() {
   // ...
 
   const onSubmit = async (d: z.infer<typeof formSchema>) => {
-    const req = await axios.post("https://getform.io/f/pagkxpya", d);
+    setisloading(true)
+    const messageId = process.env.MESSAGE_ID;
+    console.log(messageId)
+    if (!messageId) {
+      throw new Error("MESSAGE_ID environment variable is not defined");
+    }
+    const req = await axios.post("https://getform.io/f/pagkxpya ", d);
     if (req.status === 200) {
       toast({
         title: "Thank you!",
         description: "We'll be in touch soon.",
       });
+      setisloading(false)
     } else {
       toast({
         title: "Error",
         description: "Something went wrong.",
       });
+      setisloading(false)
     }
   };
   return (
@@ -118,7 +129,8 @@ function ContactCard() {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button type="submit">{isloading? <Loader2 className="animate-spin" /> :  "Submit"}</Button>
+
         </form>
       </Form>
     </div>

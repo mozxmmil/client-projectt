@@ -21,6 +21,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { tree } from "next/dist/build/templates/app-page";
 import ContactCard from "@/components/ContactCard";
+import Footer from "@/components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 function AuroraBackgroundDemo() {
@@ -331,15 +332,17 @@ function AuroraBackgroundDemo() {
               <hr className="mt-4" />
             </div>
           </div>
-          
         </div>
-        <div className="h-screen w-full dark:bg-zinc-800 bg-white flex justify-center pt-5 md:pt-10">
-          <div className="md:w-1/2 w-full h-fit   md:px-10 px-5 md:py-10 py-1 dark:text-white text-black">
-          <h1 className="text-4xl text-center font-bold font-mono ">
-          Have Questions? Contact Us
-          </h1>
+        <div className="min-h-[80vh] w-full dark:bg-zinc-800 bg-white flex justify-center pt-5 md:pt-10">
+          <div className="md:w-1/2 w-full h-fit   md:px-10 px-5 md:py-10 py-2 dark:text-white text-black">
+            <h1 className="text-4xl text-center font-bold font-mono ">
+              Have Questions? Contact Us
+            </h1>
             <ContactCard />
           </div>
+        </div>
+        <div className="footer w-full md:h-[90vh] h-screen bg-red-400 ">
+          <Footer />
         </div>
       </div>
     </>
