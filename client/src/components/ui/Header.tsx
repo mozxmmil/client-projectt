@@ -9,7 +9,9 @@ import { ModeToggle } from "./darkMode";
 import MenuToggle from "@/components/MenuToggle";
 import { useNavContex } from "@/context/NavButton";
 import Link from "next/link";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 

@@ -21,8 +21,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ContactCard from "@/components/ContactCard";
 import Footer from "@/components/Footer";
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.registerPlugin(useGSAP);
 function AuroraBackgroundDemo() {
   const animation = useRef<HTMLDivElement>(null);
   const h1 = useRef<HTMLDivElement>(null);
@@ -33,8 +33,8 @@ function AuroraBackgroundDemo() {
   const h6 = useRef<HTMLDivElement>(null);
   const h7 = useRef<HTMLDivElement>(null);
   const h8 = useRef<HTMLDivElement>(null);
-
   useGSAP(
+
     () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -42,6 +42,7 @@ function AuroraBackgroundDemo() {
           start: "30% 70%",
           end: "70% 80%",
           scrub: true,
+          
         },
       });
       tl.to(h1.current, {
@@ -73,9 +74,7 @@ function AuroraBackgroundDemo() {
   );
 
   const { theme, setTheme } = useTheme();
-  useEffect(() => {
-    
-  }, [setTheme]);
+  useEffect(() => {}, [setTheme]);
   const word = ["better", "Creative", "beautiful", "modern"];
   const { isOpen } = useNavContex();
   const handleWhatsapp = (idx: number) => {
@@ -154,6 +153,7 @@ function AuroraBackgroundDemo() {
                     width={1000}
                     height={1000}
                     alt="no"
+                    loading="eager"
                   />
                 </motion.div>
               </div>
@@ -161,6 +161,7 @@ function AuroraBackgroundDemo() {
                 className="absolute w-[60px] h-[60px] top-[20%] right-[10%] animate-upanddown md:h-[100px] md:w-[100px]   "
                 src={illusion1}
                 alt="no"
+                loading="eager"
               />
               <Image
                 className="absolute  top-[14%] left-[20%] animate-middle w-[60px] h-[60px] md:h-[100px] md:w-[100px]"
@@ -168,6 +169,7 @@ function AuroraBackgroundDemo() {
                 height={100}
                 width={100}
                 alt="no"
+                loading="eager"
               />
               <Image
                 className="absolute  top-[70%] left-[20%] animate-down w-[60px] h-[60px] md:h-[100px] md:w-[100px]  "
@@ -175,12 +177,13 @@ function AuroraBackgroundDemo() {
                 height={100}
                 width={100}
                 alt="no"
+                loading="eager"
               />
             </div>
           </motion.div>
         </AuroraBackground>
         {isOpen && (
-          <div className="h-screen w-full bg-black absolute  z-40 top-24 left-0 block md:hidden">
+          <div className=" w-full bg-black absolute  z-[40] top-24 left-0 block md:hidden">
             <Link href={"/get-touch"}>
               <div className="w-full bg-[#29231f] h-20 flex items-center justify-center mb-2">
                 {buttons.map((button, idx) => (
@@ -211,7 +214,7 @@ function AuroraBackgroundDemo() {
                 </h1>
               </Link>
             </div>
-            <div className="w-full  bg-[#29231f] h-20 flex items-center justify-center mb-2">
+            <div className="w-full relative z-40  bg-[#29231f] h-20 flex items-center justify-center mb-2">
               <ModeToggle />
             </div>
           </div>
