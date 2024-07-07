@@ -19,14 +19,12 @@ import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { tree } from "next/dist/build/templates/app-page";
 import ContactCard from "@/components/ContactCard";
 import Footer from "@/components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
 function AuroraBackgroundDemo() {
   const animation = useRef<HTMLDivElement>(null);
-  const absolatediv = useRef<HTMLDivElement>(null);
   const h1 = useRef<HTMLDivElement>(null);
   const h2 = useRef<HTMLDivElement>(null);
   const h3 = useRef<HTMLDivElement>(null);
@@ -75,6 +73,9 @@ function AuroraBackgroundDemo() {
   );
 
   const { theme, setTheme } = useTheme();
+  useEffect(() => {
+    
+  }, [setTheme]);
   const word = ["better", "Creative", "beautiful", "modern"];
   const { isOpen } = useNavContex();
   const handleWhatsapp = (idx: number) => {
