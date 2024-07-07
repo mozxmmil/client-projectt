@@ -34,8 +34,10 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="w-full h-full overflow-hidden relative md:px-16 md:py-10 text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:w-[500px] md:h-[500px] w-64 h-64  opacity-50 border-2 border-white absolute md:-top-[30%] md:-left-[10%]  -top-[15%] -left-[15%] rounded-full"></div>
+    <div className="w-full h-full  relative md:px-16 md:py-10 pb-10  text-black dark:text-white bg-white dark:bg-black">
+      <div className="overflow-hidden w-full h-full  absolute top-0 left-0">
+        <div className="md:w-[500px] md:h-[500px] w-64 h-64  opacity-50 border-2 border-white absolute md:-top-[30%] md:-left-[10%]  -top-[15%] -left-[15%] rounded-full"></div>
+      </div>
       <div className="absolute w-[300px] h-[300px] overflow-hidden rounded-full right-0 top-1/2 flex justify-center items-center opacity-50 ">
         <Image className="" src={dots} content="cover" alt="no" />
       </div>
@@ -74,7 +76,7 @@ const Footer = () => {
           ))}
         </div>
         <div
-          className="w-full  dark:border-white border-[1px] border-black md:min-h-[20%] py-5 md:py-0 
+          className="w-full flex-col md:flex-row bg-red-800  dark:border-white border-[1px] border-black md:min-h-[20%] py-5 md:py-0 
          rounded-xl flex items-center justify-evenly gap-2 md:px-10 px-2 md:my-10 my-10"
         >
           <h1 className="text-nowrap font-bold md:text-4xl text-1xl">

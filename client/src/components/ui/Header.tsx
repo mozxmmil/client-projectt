@@ -24,7 +24,7 @@ const Header = () => {
     <>
       <nav
         
-        className="w-full  fixed flex z-[9999] items-center justify-between pr-10 md:px-5 md:py-2 text-white"
+        className="w-full  fixed flex z-30 items-center justify-between pr-10 md:px-5 md:py-2 text-white"
       >
         <div className="md:ml-10">
           <Link href={"/"}>

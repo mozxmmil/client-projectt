@@ -342,7 +342,7 @@ function AuroraBackgroundDemo() {
             <ContactCard />
           </div>
         </div>
-        <div className="footer w-full md:h-[90vh] h-screen bg-red-400 ">
+        <div className="footer w-full h-screen ">
           <Footer />
         </div>
       </div>
