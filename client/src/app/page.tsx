@@ -23,6 +23,7 @@ import ContactCard from "@/components/ContactCard";
 import Footer from "@/components/Footer";
  gsap.registerPlugin(ScrollTrigger);
  gsap.registerPlugin(useGSAP);
+
 function AuroraBackgroundDemo() {
   const animation = useRef<HTMLDivElement>(null);
   const h1 = useRef<HTMLDivElement>(null);

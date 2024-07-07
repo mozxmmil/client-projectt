@@ -8,47 +8,63 @@ import mongodb from "../../public/mongo-ZuFRBpiX.png";
 import nodejs from "../../public/node-FAB_1iA1.png";
 import react from "../../public/react-ZkobJTb8.webp";
 import ui from "../../public/ui-axDjbDyt.png";
-
+import ae from "../../public/after-effects.png";
+import ai from "../../public/illustrator.png";
+import lr from "../../public/photoshop-lightroom.png";
+import ps from "../../public/photoshop.png";
+import pr from "../../public/premiere-pro (1).png";
 
 export const Item1 = [
   {
     id: 1,
-    url:  abobe ,
+    url: abobe,
   },
   {
     id: 2,
-    url:  boostrap ,
+    url: ps,
   },
   {
     id: 3,
-    url: css ,
+    url: ae,
   },
   {
     id: 4,
-    url:  js ,
+    url: ai,
   },
   {
     id: 5,
-    url:  figma,
+    url: figma,
   },
   {
     id: 6,
-    url:  html ,
+    url: ai,
   },
   {
     id: 7,
-    url: mongodb ,
+    url: mongodb,
   },
   {
     id: 8,
-    url: nodejs ,
+    url: nodejs,
   },
   {
     id: 9,
-    url:  react ,
+    url: react,
   },
   {
-    id: 9,
-    url:  ui ,
+    id: 10,
+    url: pr,
+  },
+  {
+    id: 11,
+    url: ui,
+  },
+  {
+    id: 12,
+    url: js,
+  },
+  {
+    id: 13,
+    url: lr,
   },
 ];

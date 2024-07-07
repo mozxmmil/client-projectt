@@ -13,8 +13,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-
-
 const Header = () => {
   const { isOpen, setIsOpen } = useNavContex();
 
@@ -24,10 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <nav
-        
-        className="w-full  fixed flex z-30 items-center justify-between pr-10 md:px-5 md:py-2 text-white"
-      >
+      <nav className="w-full  fixed flex z-30 items-center justify-between pr-10 md:px-5 md:py-2 text-white">
         <div className="md:ml-10">
           <Link href={"/"}>
             <Image
