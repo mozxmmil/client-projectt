@@ -9,7 +9,6 @@ interface Input {
 
 const MenuToggle: React.FC<Input> = ({ onclick }) => {
   const [toggle, setToggle] = useState(false);
-
   const handleToggle = () => {
     setToggle(!toggle);
     if (onclick) {
@@ -20,7 +19,7 @@ const MenuToggle: React.FC<Input> = ({ onclick }) => {
   return (
     <div className="relative text-2xl font-bold text-black dark:text-white ">
       <div className="absolute right-0 z-[9999]" onClick={handleToggle}>
-        {toggle ? (
+        {!toggle ? (
           <div className="text-black dark:text-white">
             <CiMenuBurger />
           </div>

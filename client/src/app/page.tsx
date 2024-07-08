@@ -19,10 +19,11 @@ import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ContactCard from "@/components/ContactCard";
-import Footer from "@/components/Footer";
- gsap.registerPlugin(ScrollTrigger);
- gsap.registerPlugin(useGSAP);
+import dynamic from "next/dynamic";
+const ContactCard = dynamic(() => import("@/components/ContactCard"));
+const Footer = dynamic(() => import("@/components/Footer"));
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 function AuroraBackgroundDemo() {
   const animation = useRef<HTMLDivElement>(null);
@@ -35,7 +36,6 @@ function AuroraBackgroundDemo() {
   const h7 = useRef<HTMLDivElement>(null);
   const h8 = useRef<HTMLDivElement>(null);
   useGSAP(
-
     () => {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -43,7 +43,6 @@ function AuroraBackgroundDemo() {
           start: "30% 70%",
           end: "70% 80%",
           scrub: true,
-          
         },
       });
       tl.to(h1.current, {

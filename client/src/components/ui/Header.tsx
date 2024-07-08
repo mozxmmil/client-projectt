@@ -31,6 +31,7 @@ const Header = () => {
               height={200}
               width={200}
               alt="No Image"
+              loading="eager"
             />
           </Link>
         </div>
