@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { use, useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { useNavContex } from "@/context/NavButton";
+import { useNavContext } from "@/context/NavButton";
 import { buttons } from "@/lib/buttonAnimation";
 import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
 import { ModeToggle } from "@/components/ui/darkMode";
@@ -76,7 +76,7 @@ function AuroraBackgroundDemo() {
   const { theme, setTheme } = useTheme();
   useEffect(() => {}, [setTheme]);
   const word = ["better", "Creative", "beautiful", "modern"];
-  const { isOpen } = useNavContex();
+  const { isOpen } = useNavContext();
   const handleWhatsapp = (idx: number) => {
     if (idx === 1) {
       const url = `https://wa.me/${9329467716}`;
@@ -200,13 +200,7 @@ function AuroraBackgroundDemo() {
                 </h1>
               </Link>
             </div>
-            <div className="w-full bg-[#29231f] relative z-40 h-20 flex items-center justify-center mb-2">
-              <Link href={"feature"}>
-                <h1 className="tracking-tighter dark:text-white text-black text-xl font-bold">
-                  Feature
-                </h1>
-              </Link>
-            </div>
+            
             <div className="w-full bg-[#29231f] relative z-40 h-20 flex items-center justify-center mb-2">
               <Link href={"about"}>
                 <h1 className="tracking-tighter dark:text-white text-black text-xl font-bold">

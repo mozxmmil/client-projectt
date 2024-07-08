@@ -7,14 +7,14 @@ import { ButtonsCard } from "./tailwindcss-buttons";
 import { buttons } from "@/lib/buttonAnimation";
 import { ModeToggle } from "./darkMode";
 import MenuToggle from "@/components/MenuToggle";
-import { useNavContex } from "@/context/NavButton";
+import { useNavContext } from "@/context/NavButton";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Header = () => {
-  const { isOpen, setIsOpen } = useNavContex();
+  const { isOpen, setIsOpen } = useNavContext();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -39,11 +39,6 @@ const Header = () => {
           <Link href={"/service"}>
             <span className="tracking-tighter hover:cursor-pointer hover:text-[#b0aa94]">
               Services
-            </span>
-          </Link>
-          <Link href={"/feature"}>
-            <span className="tracking-tighter hover:cursor-pointer hover:text-[#b0aa94]">
-              Feature
             </span>
           </Link>
           <Link href={"/about"}>
