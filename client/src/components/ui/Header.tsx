@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../../public/adarhs.png.png";
 import { Button } from "./button";
@@ -9,11 +9,29 @@ import { ModeToggle } from "./darkMode";
 import MenuToggle from "@/components/MenuToggle";
 import { useNavContext } from "@/context/NavButton";
 import Link from "next/link";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { useTheme } from "next-themes";
 
 const Header = () => {
+
+  let { theme, setTheme } = useTheme();
+  const nav = useRef(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: nav.current,
+        start: "100% top",
+        end: "100% 50%",
+        scrub: 1,
+        
+      },
+    });
+    tl.to(nav.current, {
+    backgroundColor:`${theme ==="dark"? "#000000" : "#ffffff"}`,
+    });
+  },[theme,nav]);
   const { isOpen, setIsOpen } = useNavContext();
 
   const handleClick = () => {
@@ -22,7 +40,10 @@ const Header = () => {
 
   return (
     <>
-      <nav className="w-full  fixed flex z-30 items-center justify-between pr-10 md:px-5 md:py-2 text-white">
+      <nav
+        ref={nav}
+        className="w-full  fixed flex z-50 items-center justify-between pr-10 md:px-5 md:py-2 text-white"
+      >
         <div className="md:ml-10">
           <Link href={"/"}>
             <Image
